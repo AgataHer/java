@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1260.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sdabyd2.programowanie.stackController.StackController">
+   <children>
+      <ChoiceBox fx:id="choiceBoxFilter" layoutX="940.0" layoutY="74.0" prefWidth="150.0" />
+      <Button fx:id="buttonFilterList" layoutX="1018.0" layoutY="162.0" mnemonicParsing="false" onAction="#filter" text="Filtruj listę" />
+      <Label fx:id="head" alignment="CENTER" layoutX="14.0" layoutY="25.0" prefHeight="25.0" prefWidth="1067.0" text="STOSIK KSIĄŻEK PODRĘCZNYCH" textAlignment="CENTER" />
+      <Button fx:id="buttonAdd" layoutX="1101.0" layoutY="202.0" mnemonicParsing="false" onAction="#addBook" prefHeight="78.0" prefWidth="140.0" text="Dodaj książkę" />
+      <Button fx:id="buttonRemove" layoutX="1101.0" layoutY="312.0" mnemonicParsing="false" onAction="#removeBook" prefHeight="78.0" prefWidth="140.0" text="Usuń książkę" />
+      <Button fx:id="buttonReturnToPrimaryView" layoutX="912.0" layoutY="573.0" mnemonicParsing="false" onAction="#returnToPrimaryView" prefHeight="53.0" prefWidth="157.0" text="Zapisz zmiany i &#10;wyjdź z podglądu stosu" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <TextField fx:id="inputFraseForFiltering" layoutX="941.0" layoutY="119.0" promptText="szukana fraza" />
+      <TableView fx:id="listOfBookOnTheStack" layoutX="14.0" layoutY="74.0" prefHeight="569.0" prefWidth="876.0">
+        <columns>
+          <TableColumn fx:id="title" prefWidth="214.99996948242188" text="Tytuł" />
+          <TableColumn fx:id="author" prefWidth="123.0" text="Autor" />
+            <TableColumn fx:id="ISBN" prefWidth="115.0" text="ISBN" />
+            <TableColumn fx:id="publisher" prefWidth="154.0" text="Wydawnictwo" />
+            <TableColumn fx:id="publishingSeries" prefWidth="113.0" text="Seria wydawnicza" />
+            <TableColumn fx:id="publishingYear" prefWidth="72.0" text="   Data&#10;wydania" />
+            <TableColumn fx:id="category" prefWidth="83.0" text="Gatunek &#10;literacki" />
+        </columns>
+      </TableView>
+      <Button fx:id="buttonRefresh" layoutX="1101.0" layoutY="429.0" mnemonicParsing="false" onAction="#refreshView" prefHeight="78.0" prefWidth="140.0" text="Odśwież widok" />
+      <Button fx:id="buttonRemoveToLibrary" layoutX="1101.0" layoutY="548.0" mnemonicParsing="false" onAction="#removeToLibrary" prefHeight="78.0" prefWidth="140.0" text="Przenieś do &#10;biblioteczki" textAlignment="CENTER" />
+      <ImageView fitHeight="449.0" fitWidth="200.0" layoutX="891.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@buka.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="buttonMark" layoutX="1101.0" layoutY="74.0" mnemonicParsing="false" onAction="#markAsFinished" prefHeight="78.0" prefWidth="140.0" text="Oznacz jako&#10;PRZECZYTANA" textAlignment="CENTER" textFill="#07d960" textOverrun="CLIP">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
